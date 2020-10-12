@@ -16,6 +16,7 @@ function Get-ActiveDirectory([String]$domainName) {
     $Users | 
         Select-Object -Properties "DistinguishedName","Enabled","GivenName","InnerDictionary","ModifiedProperties",
                                     "Name","ObjectClass","ObjectGuid","PropertyCount","PropertyNames",""
+                                    "DistinguishedName","Enabled","GivenName","Name","ObjectClass","ObjectGuid","SamAccountName","SID","Surname","UserPrincipalName"
     # Get-ADObject https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADObject?view=win10-ps
     # Get-ADGroup https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADGroup?view=win10-ps
     # Get-ADComputer https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADComputer?view=win10-ps
