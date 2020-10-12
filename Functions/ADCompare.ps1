@@ -12,6 +12,10 @@ function Get-ActiveDirectory([String]$domainName) {
     # Get-DistributionGroup https://docs.microsoft.com/en-us/powershell/module/exchange/get-distributiongroup?view=exchange-ps
     # Get-ADPermission https://docs.microsoft.com/en-us/powershell/module/exchange/get-adpermission?view=exchange-ps
     # Get-ADUser https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADUser?view=win10-ps
+    $Users = Get-ADUser -Filter * -Properties *
+    $Users | 
+        Select-Object -Properties "DistinguishedName","Enabled","GivenName","InnerDictionary","ModifiedProperties",
+                                    "Name","ObjectClass","ObjectGuid","PropertyCount","PropertyNames",""
     # Get-ADObject https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADObject?view=win10-ps
     # Get-ADGroup https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADGroup?view=win10-ps
     # Get-ADComputer https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADComputer?view=win10-ps
@@ -47,4 +51,4 @@ function Get-ActiveDirectory([String]$domainName) {
     # Get-ADTrust https://docs.microsoft.com/en-us/powershell/module/activedirectory/get-adtrust?view=winserver2012-ps
     # Get-ADUserResultantPasswordPolicy https://docs.microsoft.com/en-us/powershell/module/activedirectory/get-aduserresultantpasswordpolicy?view=winserver2012-ps
 
-}
+}v
